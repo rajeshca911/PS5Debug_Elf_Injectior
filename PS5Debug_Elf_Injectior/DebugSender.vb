@@ -1,11 +1,12 @@
-﻿Imports libdebug
-Imports System.IO
+﻿Imports System.IO
 Imports System.Text
+Imports libdebug
 
 Module DebugSender
 
     Public PS5 As PS4DBG
     Public totalproces As Integer = 0
+
     Public Sub SendDebugElf(IPADD As String, ElfFile As String, Optional ByVal Pname As String = "eboot.bin")
         'With Form1.Statlabel
         '    .ForeColor = Color.Green
@@ -34,7 +35,6 @@ Module DebugSender
             PS5.Notify(222, $"[+] Loaded: {Path.GetFileName(ElfFile)}")
             'Form1.Statlabel.Text = "[+] Elf Loaded"
             Disconnectps5()
-
         Catch ex As Exception
             'With Form1.Statlabel
             '    .Text = "[x] Error"
@@ -44,6 +44,7 @@ Module DebugSender
             MessageBox.Show($"Error: {ex.Message}", "Error: " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
     Public Sub psprocessinfo(IPADD As String, pname As String)
         Dim st As New StringBuilder
         Try
@@ -59,11 +60,11 @@ Module DebugSender
             st.AppendLine(P.ToString)
             st.AppendLine("Process ID: " & P.pid)
             PlistExpl.TxtStat.Text = st.ToString
-
         Catch ex As Exception
             Disconnectps5()
         End Try
     End Sub
+
     Public Sub FetchProcessesAsync(IPADD As String)
         totalproces = 0
         With HomeForm.Statlabel
@@ -75,7 +76,6 @@ Module DebugSender
         Try
 
             'Dim IPADD As String = Form1.IPTextBOX.Text.Trim()
-
 
             connectps5(IPADD)
             Dim PL As ProcessList = PS5.GetProcessList()
@@ -103,7 +103,6 @@ Module DebugSender
             '    End If
             'End If
 
-
             totalproces = PL.processes.Count
             PlistExpl.LblProcess.Text = $"Found Processes {totalproces.ToString}"
 
@@ -122,18 +121,19 @@ Module DebugSender
         End Try
 
     End Sub
+
     Public Sub connectps5(IPADD As String)
         Try
 
             PS5 = New PS4DBG(IPADD)
-                PS5.Connect()
-                PS5.Notify(222, "Connected ..!")
+            PS5.Connect()
+            PS5.Notify(222, "Connected ..!")
             'console.writeline(PS5.GetConsoleDebugVersion())
-
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Could Not Connect PS5")
         End Try
     End Sub
+
     Public Sub Disconnectps5()
         Try
             If PS5.IsConnected Then
@@ -144,6 +144,7 @@ Module DebugSender
             MessageBox.Show(ex.Message, "Could Not DisConnect PS5")
         End Try
     End Sub
+
     Public Sub GetInfo()
         Dim dg As New StringBuilder
         connectps5(HomeForm.TxtIPaddr.Text.Trim)
@@ -154,4 +155,5 @@ Module DebugSender
         MessageBox.Show(dg.ToString)
         PlistExpl.TxtStat.Text = dg.ToString
     End Sub
+
 End Module

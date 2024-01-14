@@ -3,13 +3,12 @@
 Module CommonModule
     Public appLocation As String = Application.StartupPath
     Public elfFolder As String = Path.Combine(appLocation, "Place Elfs Here")
+
     Public Sub RefreshElfs()
 
         PlistExpl.CmbElfs.Items.Clear()
 
         Try
-
-
 
             If Not Directory.Exists(elfFolder) Then
                 Directory.CreateDirectory(elfFolder)
