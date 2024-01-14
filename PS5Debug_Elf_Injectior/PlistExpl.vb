@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text
 
 Public Class PlistExpl
     Private Sub PlistExpl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -14,7 +15,7 @@ Public Class PlistExpl
             End If
 
         Else
-                CMBplist.SelectedItem = "eboot.bin"
+            CMBplist.SelectedItem = "eboot.bin"
         End If
     End Sub
 
@@ -45,4 +46,6 @@ Public Class PlistExpl
         End If
 
     End Sub
+
+
 End Class

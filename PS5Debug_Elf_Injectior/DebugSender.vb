@@ -16,24 +16,25 @@ Module DebugSender
             Application.DoEvents()
             'Dim IPADD As String = Form1.IPTextBOX.Text.Trim()
 
-            PS5 = New PS4DBG(IPADD)
-            PS5.Connect()
+            connectps5(IPADD)
             Dim PL As ProcessList = PS5.GetProcessList()
             Dim P As Process = PL.FindProcess(Pname)
             'Form1.Statlabel.ForeColor = Color.Blue
             If P Is Nothing Then
                 ' Form1.Statlabel.Text = "[X] process not found"
                 MessageBox.Show($"{Pname} Not found !!")
-                PS5.Disconnect()
+                Disconnectps5()
                 Exit Sub
             End If
             My.Settings.IPAddr = IPADD
             My.Settings.Save()
             Dim stub As ULong = PS5.InstallRPC(P.pid)
-            Dim cleanelf As String = "PS5-CleanELF.elf"
+            'Dim cleanelf As String = "PS5-CleanELF.elf"
             PS5.LoadElf(P.pid, ElfFile)
+            PS5.Notify(222, $"[+] Loaded: {Path.GetFileName(ElfFile)}")
             'Form1.Statlabel.Text = "[+] Elf Loaded"
-            PS5.Disconnect()
+            Disconnectps5()
+
         Catch ex As Exception
             'With Form1.Statlabel
             '    .Text = "[x] Error"
@@ -46,13 +47,13 @@ Module DebugSender
     Public Sub psprocessinfo(IPADD As String, pname As String)
         Dim st As New StringBuilder
         Try
-            PS5 = New PS4DBG(IPADD)
-            PS5.Connect()
+
+            connectps5(IPADD)
             Dim PL As ProcessList = PS5.GetProcessList()
             Dim P As Process = PL.FindProcess(pname)
             If P Is Nothing Then
                 MessageBox.Show($"{pname} Not found !!")
-                PS5.Disconnect()
+                Disconnectps5()
                 Exit Sub
             End If
             st.AppendLine(P.ToString)
@@ -60,7 +61,7 @@ Module DebugSender
             PlistExpl.TxtStat.Text = st.ToString
 
         Catch ex As Exception
-
+            Disconnectps5()
         End Try
     End Sub
     Public Sub FetchProcessesAsync(IPADD As String)
@@ -76,8 +77,7 @@ Module DebugSender
             'Dim IPADD As String = Form1.IPTextBOX.Text.Trim()
 
 
-            PS5 = New PS4DBG(IPADD)
-            PS5.Connect()
+            connectps5(IPADD)
             Dim PL As ProcessList = PS5.GetProcessList()
             PlistExpl.CMBplist.Items.Clear()
 
@@ -106,7 +106,7 @@ Module DebugSender
 
             totalproces = PL.processes.Count
             PlistExpl.LblProcess.Text = $"Found Processes {totalproces.ToString}"
-            PS5.Disconnect()
+
             My.Settings.IPAddr = IPADD
             My.Settings.Save()
             HomeForm.Hide()
@@ -116,7 +116,42 @@ Module DebugSender
             HomeForm.Statlabel.Text = "[X] Error.."
             HomeForm.Statlabel.ForeColor = Color.Red
             MessageBox.Show($"Error: {ex.Message}", "Error: " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+
+            Disconnectps5()
         End Try
 
+    End Sub
+    Public Sub connectps5(IPADD As String)
+        Try
+
+            PS5 = New PS4DBG(IPADD)
+                PS5.Connect()
+                PS5.Notify(222, "Connected ..!")
+            'console.writeline(PS5.GetConsoleDebugVersion())
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Could Not Connect PS5")
+        End Try
+    End Sub
+    Public Sub Disconnectps5()
+        Try
+            If PS5.IsConnected Then
+                PS5.Notify(222, "Safely Exiting ..!")
+                PS5.Disconnect()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Could Not DisConnect PS5")
+        End Try
+    End Sub
+    Public Sub GetInfo()
+        Dim dg As New StringBuilder
+        connectps5(HomeForm.TxtIPaddr.Text.Trim)
+        dg.AppendLine("Debug Version: " & PS5.GetConsoleDebugVersion())
+        dg.AppendLine("Library Version: " & PS5.GetLibraryDebugVersion())
+
+        Disconnectps5()
+        MessageBox.Show(dg.ToString)
+        PlistExpl.TxtStat.Text = dg.ToString
     End Sub
 End Module
