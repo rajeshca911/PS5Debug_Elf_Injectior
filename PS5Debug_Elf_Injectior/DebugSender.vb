@@ -65,6 +65,11 @@ Module DebugSender
     End Sub
     Public Sub FetchProcessesAsync(IPADD As String)
         totalproces = 0
+        With HomeForm.Statlabel
+            .ForeColor = Color.Green
+            .Text = "[+] Connecting.."
+
+        End With
 
         Try
 
@@ -76,10 +81,10 @@ Module DebugSender
             Dim PL As ProcessList = PS5.GetProcessList()
             PlistExpl.CMBplist.Items.Clear()
 
-            'With Form1.Statlabel
-            '    .Text = "[√] Processes fetched successfully"
-            '    .ForeColor = Color.Green
-            'End With
+            With HomeForm.Statlabel
+                .Text = "[√] Processes fetched successfully"
+                .ForeColor = Color.Green
+            End With
 
             If PL.processes IsNot Nothing Then
                 PlistExpl.CMBplist.Items.Clear()
@@ -109,6 +114,7 @@ Module DebugSender
             HomeForm.Show()
         Catch ex As Exception
             HomeForm.Statlabel.Text = "[X] Error.."
+            HomeForm.Statlabel.ForeColor = Color.Red
             MessageBox.Show($"Error: {ex.Message}", "Error: " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 

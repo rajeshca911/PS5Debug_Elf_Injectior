@@ -22,13 +22,14 @@ Public Class PlistExpl
 
     Private Sub BtnSend_Click(sender As Object, e As EventArgs) Handles BtnSend.Click
         Dim selectedElfItem As Object = CmbElfs.SelectedItem
+        Dim IPad As String = CmbElfs.Text.ToString
         Dim pname As String = CMBplist.SelectedItem
         If selectedElfItem Is Nothing OrElse String.IsNullOrEmpty(selectedElfItem.ToString()) Then
             MessageBox.Show("No Elf Selected")
             Exit Sub
         End If
 
-        Dim IPad As String = CmbElfs.Text.ToString
+
         If pname Is Nothing OrElse String.IsNullOrEmpty(pname.ToString()) Then
             MessageBox.Show("No Process Selected")
             Exit Sub

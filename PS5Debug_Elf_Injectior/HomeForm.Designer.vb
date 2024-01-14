@@ -96,8 +96,10 @@ Partial Class HomeForm
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.BtnFetchPL)
         Me.Controls.Add(Me.Statlabel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "HomeForm"
-        Me.Text = "HomeForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "PSDDebug_Elf_Injector"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)

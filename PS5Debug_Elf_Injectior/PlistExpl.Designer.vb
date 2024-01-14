@@ -53,7 +53,7 @@ Partial Class PlistExpl
         Me.LblProcess.Name = "LblProcess"
         Me.LblProcess.Size = New System.Drawing.Size(196, 26)
         Me.LblProcess.TabIndex = 6
-        Me.LblProcess.Text = "Total Processes"
+        Me.LblProcess.Text = "No Process Selected"
         Me.LblProcess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CMBplist
@@ -133,6 +133,7 @@ Partial Class PlistExpl
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "PlistExpl"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Process Explorer"
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
