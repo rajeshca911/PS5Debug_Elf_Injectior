@@ -13,15 +13,15 @@ Option Explicit On
 
 
 Namespace My
-
+    
     'NOTE: This file is auto-generated; do not modify it directly.  To make changes,
     ' or if you encounter build errors in this file, go to the Project Designer
     ' (go to Project Properties or double-click the My Project node in
     ' Solution Explorer), and make changes on the Application tab.
     '
     Partial Friend Class MyApplication
-
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
+        
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Public Sub New()
             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
             Me.IsSingleInstance = false
@@ -30,9 +30,14 @@ Namespace My
             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
         End Sub
 
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PS5Debug_Elf_Injectior.Form1
+            ' Instantiate an instance of Form1
+            Dim mainFormInstance As New Global.PS5Debug_Elf_Injectior.Form1()
+
+            ' Assign the instance to Me.MainForm
+            Me.MainForm = mainFormInstance
         End Sub
+
     End Class
 End Namespace
