@@ -7,6 +7,15 @@ Public Class PlistExpl
         Me.MinimumSize = initialSize
         Me.MaximumSize = initialSize
         RefreshElfs()
+
+        If Not CMBplist.Items.Contains("eboot.bin") Then
+            If CMBplist.Items.Count > 0 Then
+                CMBplist.SelectedIndex = 0
+            End If
+
+        Else
+                CMBplist.SelectedItem = "eboot.bin"
+        End If
     End Sub
 
 
@@ -29,4 +38,10 @@ Public Class PlistExpl
         SendDebugElf(IPad, selectedElf, pname)
     End Sub
 
+    Private Sub CMBplist_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMBplist.SelectedIndexChanged
+        If Not CMBplist.SelectedItem Is Nothing Then
+            psprocessinfo(HomeForm.TxtIPaddr.Text, CMBplist.SelectedItem.ToString)
+        End If
+
+    End Sub
 End Class

@@ -23,49 +23,65 @@ Partial Class PlistExpl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LblProcess = New System.Windows.Forms.Label()
         Me.CMBplist = New System.Windows.Forms.ComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblElfCount = New System.Windows.Forms.Label()
         Me.BtnSend = New System.Windows.Forms.Button()
         Me.CmbElfs = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtStat = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.LblProcess)
         Me.Panel1.Controls.Add(Me.CMBplist)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.lblElfCount)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 177)
+        Me.Panel1.Size = New System.Drawing.Size(198, 212)
         Me.Panel1.TabIndex = 0
+        '
+        'LblProcess
+        '
+        Me.LblProcess.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LblProcess.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblProcess.Location = New System.Drawing.Point(0, 158)
+        Me.LblProcess.Name = "LblProcess"
+        Me.LblProcess.Size = New System.Drawing.Size(196, 26)
+        Me.LblProcess.TabIndex = 6
+        Me.LblProcess.Text = "Total Processes"
+        Me.LblProcess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CMBplist
         '
         Me.CMBplist.Dock = System.Windows.Forms.DockStyle.Top
         Me.CMBplist.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CMBplist.FormattingEnabled = True
-        Me.CMBplist.Location = New System.Drawing.Point(0, 50)
+        Me.CMBplist.Location = New System.Drawing.Point(0, 0)
         Me.CMBplist.Name = "CMBplist"
-        Me.CMBplist.Size = New System.Drawing.Size(200, 28)
+        Me.CMBplist.Size = New System.Drawing.Size(196, 28)
         Me.CMBplist.TabIndex = 0
         '
-        'PictureBox1
+        'lblElfCount
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(200, 50)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.lblElfCount.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lblElfCount.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblElfCount.Location = New System.Drawing.Point(0, 184)
+        Me.lblElfCount.Name = "lblElfCount"
+        Me.lblElfCount.Size = New System.Drawing.Size(196, 26)
+        Me.lblElfCount.TabIndex = 5
+        Me.lblElfCount.Text = "Total Elf Files"
+        Me.lblElfCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'BtnSend
         '
         Me.BtnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSend.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnSend.Location = New System.Drawing.Point(269, 102)
+        Me.BtnSend.Location = New System.Drawing.Point(282, 57)
         Me.BtnSend.Name = "BtnSend"
         Me.BtnSend.Size = New System.Drawing.Size(106, 32)
         Me.BtnSend.TabIndex = 2
@@ -77,27 +93,40 @@ Partial Class PlistExpl
         Me.CmbElfs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbElfs.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.CmbElfs.FormattingEnabled = True
-        Me.CmbElfs.Location = New System.Drawing.Point(269, 50)
+        Me.CmbElfs.Location = New System.Drawing.Point(282, 9)
         Me.CmbElfs.Name = "CmbElfs"
-        Me.CmbElfs.Size = New System.Drawing.Size(222, 29)
+        Me.CmbElfs.Size = New System.Drawing.Size(209, 29)
         Me.CmbElfs.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(204, 47)
+        Me.Label2.Location = New System.Drawing.Point(204, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 26)
+        Me.Label2.Size = New System.Drawing.Size(79, 26)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Elf Files"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TxtStat
+        '
+        Me.TxtStat.BackColor = System.Drawing.Color.Snow
+        Me.TxtStat.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtStat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtStat.Location = New System.Drawing.Point(207, 112)
+        Me.TxtStat.Multiline = True
+        Me.TxtStat.Name = "TxtStat"
+        Me.TxtStat.Size = New System.Drawing.Size(278, 88)
+        Me.TxtStat.TabIndex = 5
+        Me.TxtStat.Text = "Process Info"
         '
         'PlistExpl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(503, 177)
+        Me.ClientSize = New System.Drawing.Size(497, 212)
+        Me.Controls.Add(Me.TxtStat)
         Me.Controls.Add(Me.CmbElfs)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BtnSend)
@@ -106,15 +135,17 @@ Partial Class PlistExpl
         Me.Name = "PlistExpl"
         Me.Text = "Process Explorer"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents CMBplist As ComboBox
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents BtnSend As Button
     Friend WithEvents CmbElfs As ComboBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents lblElfCount As Label
+    Friend WithEvents LblProcess As Label
+    Friend WithEvents TxtStat As TextBox
 End Class

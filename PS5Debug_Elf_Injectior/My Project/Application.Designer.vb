@@ -29,15 +29,10 @@ Namespace My
             Me.SaveMySettingsOnExit = true
             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
         End Sub
-
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
+        
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            ' Instantiate an instance of Form1
-            Dim mainFormInstance As New Global.PS5Debug_Elf_Injectior.Form1()
-
-            ' Assign the instance to Me.MainForm
-            Me.MainForm = mainFormInstance
+            Me.MainForm = Global.PS5Debug_Elf_Injectior.HomeForm
         End Sub
-
     End Class
 End Namespace

@@ -24,6 +24,14 @@ Module CommonModule
                 End If
 
             Next
+            'With Form1.Statlabel
+            '    .Text = $"Found {elfFiles.Count.ToString} elf(s)"
+            '    .Update()
+            'End With
+            With PlistExpl.lblElfCount
+                .Text = $"Found {elfFiles.Count.ToString} elf(s)"
+                .Update()
+            End With
 
             If PlistExpl.CmbElfs.Items.Count > 0 Then
                 PlistExpl.CmbElfs.SelectedIndex = 0
