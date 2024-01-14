@@ -8,11 +8,7 @@ Module DebugSender
     Public totalproces As Integer = 0
 
     Public Sub SendDebugElf(IPADD As String, ElfFile As String, Optional ByVal Pname As String = "eboot.bin")
-        'With Form1.Statlabel
-        '    .ForeColor = Color.Green
-        '    .Text = "[+] Connecting..Please wait"
-        '    .Update()
-        'End With
+
         Try
             Application.DoEvents()
             'Dim IPADD As String = Form1.IPTextBOX.Text.Trim()
@@ -20,7 +16,7 @@ Module DebugSender
             connectps5(IPADD)
             Dim PL As ProcessList = PS5.GetProcessList()
             Dim P As Process = PL.FindProcess(Pname)
-            'Form1.Statlabel.ForeColor = Color.Blue
+
             If P Is Nothing Then
                 ' Form1.Statlabel.Text = "[X] process not found"
                 MessageBox.Show($"{Pname} Not found !!")
@@ -33,14 +29,10 @@ Module DebugSender
             'Dim cleanelf As String = "PS5-CleanELF.elf"
             PS5.LoadElf(P.pid, ElfFile)
             PS5.Notify(222, $"[+] Loaded: {Path.GetFileName(ElfFile)}")
-            'Form1.Statlabel.Text = "[+] Elf Loaded"
+            PlistExpl.TxtStat.Text = "[+] Elf Loaded"
             Disconnectps5()
         Catch ex As Exception
-            'With Form1.Statlabel
-            '    .Text = "[x] Error"
-            '    .ForeColor = Color.Red
-            '    .Update()
-            'End With
+            PlistExpl.TxtStat.Text = "[x] Error"
             MessageBox.Show($"Error: {ex.Message}", "Error: " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
