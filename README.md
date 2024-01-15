@@ -30,7 +30,8 @@ Following these straightforward steps will enable you to effectively manage and 
 ### 
 
 - Dlls & Code Samples
-- [SiSTRO](PS5Debug_Elf_Injectior)
+- [SiSTRO](https://github.com/SiSTR0)
+- [ctn123](https://github.com/ctn123)
 - [_Kameleon](https://github.com/kmeps4/PS5Debug_Elf_Injection)
 - [PS5DEBUG](https://github.com/GoldHEN/ps5debug)
 
