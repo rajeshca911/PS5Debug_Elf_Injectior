@@ -41,4 +41,25 @@ Module CommonModule
         End Try
     End Sub
 
+    Public Function Browseforfile(cfileter As String) As String
+        Dim sfile As String = ""
+        Try
+            Dim fd As OpenFileDialog = New OpenFileDialog()
+
+            fd.Title = "Open File Dialog"
+            fd.InitialDirectory = "C:\"
+            fd.Filter = cfileter
+            fd.FilterIndex = 2
+            'fd.RestoreDirectory = True
+
+            If fd.ShowDialog() = DialogResult.OK Then
+                sfile = fd.FileName
+                Return sfile
+            End If
+        Catch ex As Exception
+            Return sfile
+        End Try
+        Return sfile
+    End Function
+
 End Module

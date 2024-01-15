@@ -5,5 +5,11 @@
     <Setting Name="IPAddr" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="portnumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9020</Value>
+    </Setting>
+    <Setting Name="DebugPayload" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

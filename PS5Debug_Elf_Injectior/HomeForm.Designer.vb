@@ -70,12 +70,12 @@ Partial Class HomeForm
         '
         'BtnFetchPL
         '
-        Me.BtnFetchPL.BackColor = System.Drawing.Color.MistyRose
+        Me.BtnFetchPL.BackColor = System.Drawing.Color.Moccasin
         Me.BtnFetchPL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnFetchPL.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnFetchPL.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnFetchPL.Location = New System.Drawing.Point(97, 120)
         Me.BtnFetchPL.Name = "BtnFetchPL"
-        Me.BtnFetchPL.Size = New System.Drawing.Size(154, 37)
+        Me.BtnFetchPL.Size = New System.Drawing.Size(154, 29)
         Me.BtnFetchPL.TabIndex = 6
         Me.BtnFetchPL.Text = "Fetch Processes"
         Me.BtnFetchPL.UseVisualStyleBackColor = False
@@ -95,10 +95,10 @@ Partial Class HomeForm
         '
         Me.BtnDebug.BackColor = System.Drawing.Color.MistyRose
         Me.BtnDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnDebug.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnDebug.Location = New System.Drawing.Point(97, 80)
+        Me.BtnDebug.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDebug.Location = New System.Drawing.Point(97, 83)
         Me.BtnDebug.Name = "BtnDebug"
-        Me.BtnDebug.Size = New System.Drawing.Size(154, 37)
+        Me.BtnDebug.Size = New System.Drawing.Size(154, 29)
         Me.BtnDebug.TabIndex = 7
         Me.BtnDebug.Text = "Send PS5_Debug"
         Me.BtnDebug.UseVisualStyleBackColor = False

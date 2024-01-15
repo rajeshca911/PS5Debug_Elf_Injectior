@@ -65,6 +65,30 @@ Namespace My
                 Me("IPAddr") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("9020")>  _
+        Public Property portnumber() As Integer
+            Get
+                Return CType(Me("portnumber"),Integer)
+            End Get
+            Set
+                Me("portnumber") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DebugPayload() As String
+            Get
+                Return CType(Me("DebugPayload"),String)
+            End Get
+            Set
+                Me("DebugPayload") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

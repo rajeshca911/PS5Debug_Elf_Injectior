@@ -11,7 +11,6 @@ Module DebugSender
 
         Try
             Application.DoEvents()
-            'Dim IPADD As String = Form1.IPTextBOX.Text.Trim()
 
             connectps5(IPADD)
             Dim PL As ProcessList = PS5.GetProcessList()
@@ -27,15 +26,20 @@ Module DebugSender
             My.Settings.Save()
             Dim stub As ULong = PS5.InstallRPC(P.pid)
             'Dim cleanelf As String = "PS5-CleanELF.elf"
+
             PS5.LoadElf(P.pid, ElfFile)
             PS5.Notify(222, $"[+] Loaded: {Path.GetFileName(ElfFile)}")
             PlistExpl.TxtStat.Text = "[+] Elf Loaded"
             Disconnectps5()
+
         Catch ex As Exception
             PlistExpl.TxtStat.Text = "[x] Error"
             MessageBox.Show($"Error: {ex.Message}", "Error: " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
     End Sub
+
+
 
     Public Sub psprocessinfo(IPADD As String, pname As String)
         Dim st As New StringBuilder
@@ -70,6 +74,7 @@ Module DebugSender
             'Dim IPADD As String = Form1.IPTextBOX.Text.Trim()
 
             connectps5(IPADD)
+
             Dim PL As ProcessList = PS5.GetProcessList()
             PlistExpl.CMBplist.Items.Clear()
 
@@ -106,7 +111,7 @@ Module DebugSender
         Catch ex As Exception
             HomeForm.Statlabel.Text = "[X] Error.."
             HomeForm.Statlabel.ForeColor = Color.Red
-            MessageBox.Show($"Error: {ex.Message}", "Error: " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Error: {ex.Message}", "Error Number : " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
 
             Disconnectps5()
