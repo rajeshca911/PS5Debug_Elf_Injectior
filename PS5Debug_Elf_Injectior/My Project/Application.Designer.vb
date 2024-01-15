@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PS5Debug_Elf_Injectior.PlistExpl
+            Me.MainForm = Global.PS5Debug_Elf_Injectior.HomeForm
         End Sub
     End Class
 End Namespace
