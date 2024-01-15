@@ -20,6 +20,9 @@ Public Class HomeForm
         If Not Directory.Exists(placeelfs) Then
             Directory.CreateDirectory(placeelfs)
         End If
+        Dim initialSize As Size = Me.Size
+        Me.MinimumSize = initialSize
+        Me.MaximumSize = initialSize
     End Sub
 
     Private Sub BtnDebug_Click(sender As Object, e As EventArgs) Handles BtnDebug.Click
@@ -48,9 +51,10 @@ Public Class HomeForm
             Console.WriteLine("Parsed port number: " & portNum)
         Else
             portNum = 9020
+            My.Settings.portnumber = 9020
+            My.Settings.Save()
             Console.WriteLine("Using default port number: " & portNum)
         End If
-
 
         Dim psender As New PayloadV2()
         Dim isConnected As Boolean = psender.Connect2PS5(psip, portNum)
@@ -86,6 +90,10 @@ Public Class HomeForm
             .ShowDialog()
         End With
         Me.Show()
+    End Sub
+
+    Private Sub CreditsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreditsToolStripMenuItem.Click
+        Credits.ShowDialog()
     End Sub
 
 End Class

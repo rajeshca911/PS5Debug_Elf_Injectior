@@ -2,6 +2,7 @@
 Imports System.Text
 
 Public Class PlistExpl
+
     Private Sub PlistExpl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'im fixing size coz maximize look is not good
         Dim initialSize As Size = Me.Size
@@ -13,13 +14,10 @@ Public Class PlistExpl
             If CMBplist.Items.Count > 0 Then
                 CMBplist.SelectedIndex = 0
             End If
-
         Else
             CMBplist.SelectedItem = "eboot.bin"
         End If
     End Sub
-
-
 
     Private Sub BtnSend_Click(sender As Object, e As EventArgs) Handles BtnSend.Click
         Dim selectedElfItem As Object = CmbElfs.SelectedItem
@@ -29,7 +27,6 @@ Public Class PlistExpl
             MessageBox.Show("No Elf Selected")
             Exit Sub
         End If
-
 
         If pname Is Nothing OrElse String.IsNullOrEmpty(pname.ToString()) Then
             MessageBox.Show("No Process Selected")
@@ -47,5 +44,8 @@ Public Class PlistExpl
 
     End Sub
 
+    Private Sub BtnRefresh_Click(sender As Object, e As EventArgs) Handles BtnRefresh.Click
+        RefreshElfs()
+    End Sub
 
 End Class

@@ -31,6 +31,7 @@ Partial Class HomeForm
         Me.BtnDebug = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CreditsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -73,9 +74,11 @@ Partial Class HomeForm
         Me.BtnFetchPL.BackColor = System.Drawing.Color.Moccasin
         Me.BtnFetchPL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnFetchPL.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnFetchPL.Image = Global.PS5Debug_Elf_Injectior.My.Resources.Resources.receipt_FILL0_wght400_GRAD0_opsz24
+        Me.BtnFetchPL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnFetchPL.Location = New System.Drawing.Point(97, 120)
         Me.BtnFetchPL.Name = "BtnFetchPL"
-        Me.BtnFetchPL.Size = New System.Drawing.Size(154, 29)
+        Me.BtnFetchPL.Size = New System.Drawing.Size(176, 29)
         Me.BtnFetchPL.TabIndex = 6
         Me.BtnFetchPL.Text = "Fetch Processes"
         Me.BtnFetchPL.UseVisualStyleBackColor = False
@@ -96,9 +99,11 @@ Partial Class HomeForm
         Me.BtnDebug.BackColor = System.Drawing.Color.MistyRose
         Me.BtnDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDebug.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDebug.Image = Global.PS5Debug_Elf_Injectior.My.Resources.Resources.input_circle_FILL0_wght400_GRAD0_opsz24
+        Me.BtnDebug.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnDebug.Location = New System.Drawing.Point(97, 83)
         Me.BtnDebug.Name = "BtnDebug"
-        Me.BtnDebug.Size = New System.Drawing.Size(154, 29)
+        Me.BtnDebug.Size = New System.Drawing.Size(176, 29)
         Me.BtnDebug.TabIndex = 7
         Me.BtnDebug.Text = "Send PS5_Debug"
         Me.BtnDebug.UseVisualStyleBackColor = False
@@ -106,7 +111,7 @@ Partial Class HomeForm
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.CreditsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(350, 24)
@@ -119,6 +124,13 @@ Partial Class HomeForm
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
         Me.SettingsToolStripMenuItem.Text = "Settings"
+        '
+        'CreditsToolStripMenuItem
+        '
+        Me.CreditsToolStripMenuItem.Image = Global.PS5Debug_Elf_Injectior.My.Resources.Resources.lightbulb_FILL0_wght400_GRAD0_opsz24
+        Me.CreditsToolStripMenuItem.Name = "CreditsToolStripMenuItem"
+        Me.CreditsToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
+        Me.CreditsToolStripMenuItem.Text = "Credits"
         '
         'HomeForm
         '
@@ -154,4 +166,5 @@ Partial Class HomeForm
     Friend WithEvents BtnDebug As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CreditsToolStripMenuItem As ToolStripMenuItem
 End Class

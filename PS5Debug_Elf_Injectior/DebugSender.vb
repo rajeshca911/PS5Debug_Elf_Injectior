@@ -31,15 +31,12 @@ Module DebugSender
             PS5.Notify(222, $"[+] Loaded: {Path.GetFileName(ElfFile)}")
             PlistExpl.TxtStat.Text = "[+] Elf Loaded"
             Disconnectps5()
-
         Catch ex As Exception
             PlistExpl.TxtStat.Text = "[x] Error"
             MessageBox.Show($"Error: {ex.Message}", "Error: " & Err.Number, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
-
-
 
     Public Sub psprocessinfo(IPADD As String, pname As String)
         Dim st As New StringBuilder
@@ -124,7 +121,7 @@ Module DebugSender
 
             PS5 = New PS4DBG(IPADD)
             PS5.Connect()
-            PS5.Notify(222, "Connected ..!")
+            'PS5.Notify(222, "Connected ..!")
             'console.writeline(PS5.GetConsoleDebugVersion())
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Could Not Connect PS5")

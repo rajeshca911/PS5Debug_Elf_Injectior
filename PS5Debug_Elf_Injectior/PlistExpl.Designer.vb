@@ -27,10 +27,11 @@ Partial Class PlistExpl
         Me.CMBplist = New System.Windows.Forms.ComboBox()
         Me.lblElfCount = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtnSend = New System.Windows.Forms.Button()
         Me.CmbElfs = New System.Windows.Forms.ComboBox()
         Me.TxtStat = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BtnRefresh = New System.Windows.Forms.Button()
+        Me.BtnSend = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -89,17 +90,6 @@ Partial Class PlistExpl
         Me.Label1.Text = "1.Select Process:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'BtnSend
-        '
-        Me.BtnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSend.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnSend.Location = New System.Drawing.Point(220, 61)
-        Me.BtnSend.Name = "BtnSend"
-        Me.BtnSend.Size = New System.Drawing.Size(106, 32)
-        Me.BtnSend.TabIndex = 2
-        Me.BtnSend.Text = "3.Send"
-        Me.BtnSend.UseVisualStyleBackColor = True
-        '
         'CmbElfs
         '
         Me.CmbElfs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -115,11 +105,11 @@ Partial Class PlistExpl
         Me.TxtStat.BackColor = System.Drawing.Color.Snow
         Me.TxtStat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtStat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtStat.Location = New System.Drawing.Point(220, 111)
+        Me.TxtStat.Location = New System.Drawing.Point(220, 128)
         Me.TxtStat.Multiline = True
         Me.TxtStat.Name = "TxtStat"
         Me.TxtStat.ReadOnly = True
-        Me.TxtStat.Size = New System.Drawing.Size(197, 76)
+        Me.TxtStat.Size = New System.Drawing.Size(197, 59)
         Me.TxtStat.TabIndex = 5
         Me.TxtStat.Text = "Process Info"
         '
@@ -134,12 +124,39 @@ Partial Class PlistExpl
         Me.Label2.Text = "2.Select Elf File"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'BtnRefresh
+        '
+        Me.BtnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRefresh.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRefresh.Image = Global.PS5Debug_Elf_Injectior.My.Resources.Resources.directory_sync_FILL0_wght400_GRAD0_opsz24
+        Me.BtnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRefresh.Location = New System.Drawing.Point(220, 93)
+        Me.BtnRefresh.Name = "BtnRefresh"
+        Me.BtnRefresh.Size = New System.Drawing.Size(138, 32)
+        Me.BtnRefresh.TabIndex = 9
+        Me.BtnRefresh.Text = "Refresh Elfs"
+        Me.BtnRefresh.UseVisualStyleBackColor = True
+        '
+        'BtnSend
+        '
+        Me.BtnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSend.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSend.Image = Global.PS5Debug_Elf_Injectior.My.Resources.Resources.input_circle_FILL0_wght400_GRAD0_opsz24
+        Me.BtnSend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSend.Location = New System.Drawing.Point(220, 59)
+        Me.BtnSend.Name = "BtnSend"
+        Me.BtnSend.Size = New System.Drawing.Size(138, 32)
+        Me.BtnSend.TabIndex = 2
+        Me.BtnSend.Text = "3.Send"
+        Me.BtnSend.UseVisualStyleBackColor = True
+        '
         'PlistExpl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
         Me.ClientSize = New System.Drawing.Size(417, 188)
+        Me.Controls.Add(Me.BtnRefresh)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TxtStat)
         Me.Controls.Add(Me.CmbElfs)
@@ -164,4 +181,5 @@ Partial Class PlistExpl
     Friend WithEvents TxtStat As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents BtnRefresh As Button
 End Class

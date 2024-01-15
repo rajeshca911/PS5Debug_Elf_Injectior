@@ -14,6 +14,7 @@ Public Class App_Settings
             My.Settings.portnumber = portnum
             My.Settings.DebugPayload = dbp
             My.Settings.Save()
+            MessageBox.Show("Values Updated")
             loadValues()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -25,6 +26,7 @@ Public Class App_Settings
         Try
             If Not String.IsNullOrEmpty(My.Settings.IPAddr) Then
                 TxtIPAddr.Text = My.Settings.IPAddr
+                HomeForm.TxtIPaddr.Text = My.Settings.IPAddr
             End If
 
             If Not String.IsNullOrEmpty(My.Settings.portnumber.ToString) Then
@@ -48,6 +50,9 @@ Public Class App_Settings
     End Sub
 
     Private Sub App_Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim initialSize As Size = Me.Size
+        Me.MinimumSize = initialSize
+        Me.MaximumSize = initialSize
         loadValues()
     End Sub
 
@@ -59,7 +64,7 @@ Public Class App_Settings
         If Not String.IsNullOrEmpty(sfile) Then
             TxtDebug.Text = sfile
         End If
-
+        Me.Activate()
     End Sub
 
 End Class
