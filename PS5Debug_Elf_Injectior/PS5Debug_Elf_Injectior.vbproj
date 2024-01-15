@@ -184,6 +184,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <Content Include="libdebug.dll" />
     <Content Include="Place Elfs Here\PS5-CleanELF.elf" />
     <None Include="PS5Debug_Elf_Injectior_TemporaryKey.pfx" />
     <Content Include="Ps5_Debugger\ps5debug.elf" />
