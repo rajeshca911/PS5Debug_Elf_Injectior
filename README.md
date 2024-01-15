@@ -9,21 +9,23 @@ Small app to inject an elf file on a game process using Ps5Debug
 ## Usage Instructions
 
 1. **Organize ELF Files:**
-   Ensure that all your ELF files are well-organized within a folder named 'Place Elfs Here'.
+   Ensure all ELF files are well-organized within a folder named 'Place Elfs Here'.
 
 2. **Retrieve PS5 IP:**
    Locate the IP address of your PS5 and input it into the designated box within the tool.
 
-3. **Fetch Processes:**
-   Click on the 'Fetch Processes' button in the tool, and a new window will appear, displaying all processes.
+3. **Send PS5 Debug Payload:**
+   Click on the 'Send 'PS5_Debug'' button in the tool.
 
-4. **Choose Elf:**
-   Select the desired ELF file from the Dropwdown Menu.
+4. **Fetch Processes:**
+   Click on the 'Fetch Processes' button in the tool. A new window will appear, displaying all processes.
 
-5. **Initiate Transfer:**
+5. **Choose Elf:**
+   Select the desired ELF file from the Dropdown Menu.
+
+6. **Initiate Transfer:**
    Press the 'Send' button to start the transfer process.
 
-Following these straightforward steps will enable you to effectively manage and transfer ELF files between your computer and PS5 using the tool.
 
 
 ## Credits
